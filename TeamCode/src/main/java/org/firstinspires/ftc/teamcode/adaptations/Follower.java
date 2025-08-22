@@ -3,7 +3,7 @@
 // (powered by FernFlower decompiler)
 //
 
-package org.firstinspires.ftc.teamcode.pedroPathing;
+package org.firstinspires.ftc.teamcode.adaptations;
 
 import android.util.Log;
 import com.acmerobotics.dashboard.config.Config;
@@ -25,7 +25,6 @@ import com.pedropathing.util.Constants;
 import com.pedropathing.util.CustomFilteredPIDFCoefficients;
 import com.pedropathing.util.CustomPIDFCoefficients;
 import com.pedropathing.util.DashboardPoseTracker;
-import com.pedropathing.util.Drawing;
 import com.pedropathing.util.FilteredPIDFController;
 import com.pedropathing.util.KalmanFilter;
 import com.pedropathing.util.PIDFController;
