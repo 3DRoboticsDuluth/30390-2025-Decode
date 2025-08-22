@@ -12,4 +12,5 @@ public class Config {
     public double delay = 0;
     public double responsiveness = 0.25;
     public boolean robotCentric = true;
+    public Pose pose = new Pose(0, 0, 0);
 }

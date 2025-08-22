@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.controls;
 
+import static com.pedropathing.pathgen.MathFunctions.clamp;
 import static com.seattlesolvers.solverslib.gamepad.GamepadKeys.Button.BACK;
 import static com.seattlesolvers.solverslib.gamepad.GamepadKeys.Button.DPAD_DOWN;
 import static com.seattlesolvers.solverslib.gamepad.GamepadKeys.Button.DPAD_LEFT;
@@ -10,13 +11,9 @@ import static com.seattlesolvers.solverslib.gamepad.GamepadKeys.Button.LEFT_STIC
 import static com.seattlesolvers.solverslib.gamepad.GamepadKeys.Button.RIGHT_BUMPER;
 import static com.seattlesolvers.solverslib.gamepad.GamepadKeys.Button.RIGHT_STICK_BUTTON;
 import static com.seattlesolvers.solverslib.gamepad.GamepadKeys.Button.START;
-import static com.seattlesolvers.solverslib.util.MathUtils.clamp;
 import static org.firstinspires.ftc.teamcode.commands.Commands.drive;
-import static org.firstinspires.ftc.teamcode.commands.Commands.pivot;
-import static org.firstinspires.ftc.teamcode.commands.Commands.slide;
 import static org.firstinspires.ftc.teamcode.game.Config.config;
 import static org.firstinspires.ftc.teamcode.opmodes.OpMode.gamepad1;
-import static org.firstinspires.ftc.teamcode.opmodes.OpMode.gamepad2;
 import static org.firstinspires.ftc.teamcode.subsystems.ConfigSubsystem.RESPONSIVENESS_INCREMENT;
 
 import org.firstinspires.ftc.teamcode.subsystems.Subsystems;
@@ -43,10 +40,10 @@ public class DriveControl {
         
         gamepad1.getGamepadButton(LEFT_BUMPER)
             .whenActive(() -> config.responsiveness = clamp(config.responsiveness - RESPONSIVENESS_INCREMENT, 0, 1));
-        
+
         gamepad1.getGamepadButton(RIGHT_BUMPER)
             .whenActive(() -> config.responsiveness = clamp(config.responsiveness + RESPONSIVENESS_INCREMENT, 0, 1));
-        
+
         gamepad1.getGamepadButton(BACK)
             .and(gamepad1.getGamepadButton(START))
             .toggleWhenActive(() -> config.robotCentric = true, () -> config.robotCentric = false);
@@ -56,9 +53,5 @@ public class DriveControl {
 
         gamepad1.getGamepadButton(RIGHT_STICK_BUTTON)
             .whenActive(drive.toNearAprilTag());
-
-        gamepad2.getGamepadButton(LEFT_STICK_BUTTON)
-            .and(gamepad2.getGamepadButton(RIGHT_STICK_BUTTON))
-            .whenActive(pivot.calibrate().alongWith(slide.calibrate()));
     }
 }

@@ -4,7 +4,6 @@ import static org.firstinspires.ftc.robotcore.external.Telemetry.DisplayFormat.H
 
 import com.acmerobotics.dashboard.FtcDashboard;
 import com.acmerobotics.dashboard.telemetry.MultipleTelemetry;
-import com.qualcomm.robotcore.hardware.Gamepad;
 import com.seattlesolvers.solverslib.command.CommandOpMode;
 import com.seattlesolvers.solverslib.command.CommandScheduler;
 import com.seattlesolvers.solverslib.gamepad.GamepadEx;
@@ -18,8 +17,8 @@ public abstract class OpMode extends CommandOpMode {
     public static SampledTelemetry telemetry;
     public static OpMode opMode;
     public static Hardware hardware;
-    public static Gamepad gamepad1;
-    public static Gamepad gamepad2;
+    public static GamepadEx gamepad1;
+    public static GamepadEx gamepad2;
 
     @Override
     public void initialize() {

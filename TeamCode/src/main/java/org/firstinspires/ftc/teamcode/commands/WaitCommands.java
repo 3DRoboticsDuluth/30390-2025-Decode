@@ -7,8 +7,7 @@ import static org.firstinspires.ftc.teamcode.opmodes.OpMode.gamepad1;
 
 import com.seattlesolvers.solverslib.command.Command;
 import com.seattlesolvers.solverslib.command.WaitCommand;
-
-import org.firstinspires.ftc.teamcode.adaptations.ftclib.WaitUntilCommand;
+import com.seattlesolvers.solverslib.command.WaitUntilCommand;
 
 import java.util.function.BooleanSupplier;
 

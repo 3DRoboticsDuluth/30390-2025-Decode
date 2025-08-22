@@ -8,7 +8,6 @@ public class Controls {
     public static void initializeTeleop() {
         new ConfigControl();
         new DriveControl();
-        new ElementControl();
         new AutoControl();
     }
 }
